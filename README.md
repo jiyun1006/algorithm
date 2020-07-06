@@ -33,3 +33,70 @@ for i in range(10):
                 solve(cnt + 1, s + str(i))
                 c[i] = False
 ```
+   
+   
+----------------------------           
+   
+   
+
+>### 2437
+**처음 시도**  
+
+**combinations 이용해서 계수정렬 형식으로 시도**   
+
+```
+for i in range(1, N):
+    weg = list(set(list(combinations(weight, i))))
+
+    for j in range(len(weg)):
+        if value[sum(weg[j])] != 0:
+            continue
+        else:
+            value[sum(weg[j])] += 1
+
+```
+*메모리 초과로 인한 리스트 인덱스 범위 초과*   
+
+
+
+
+
+**두 번째 시도**   
+
+**bisect를 이용해서 무게들의 더해가면서 그보다 1 큰 값**   
+```
+for i in range(N):
+    value = sum_list[i]
+    weight_copy = weight.copy()
+    while value > 0:
+        value -= weight_copy[bisect(weight_copy, value) - 1]
+        weight_copy.pop(bisect(weight_copy, value) - 1)
+        if not weight_copy:
+            break
+    if value < 0:
+        print(sum_list[i])
+        break
+```
+
+*while문 break 조건 부족으로 오류*
+
+    
+
+               
+   
+
+**세 번째 시도**   
+
+**(더해가는 값+1)이 리스트에 있는 값보다 작을 때 반복문 탈출**   
+
+
+```
+weight.sort()
+sum = 0
+for i in range(N):
+    if sum + 1 >= weight[i]:
+        sum += weight[i]
+    else:
+        break
+print(sum+1)
+```
