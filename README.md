@@ -100,3 +100,72 @@ for i in range(N):
         break
 print(sum+1)
 ```
+
+   
+   
+----------------------------           
+   
+   
+
+>### 1700   
+**처음 시도**   
+   
+**구멍이 비어있으면 계속 꽂는다. 다 찼다면 그 이후의 순서를 봐서 제일 빈도수가 낮은 번호를 뺀다.**   
+
+```
+stack = []
+    for i in range(K):
+        if hole[i] in stack:
+            continue
+        else:
+            if len(stack) >= N:
+                min_num = K
+                for j in stack:
+                    if hole[i:].count(j) == 0:
+                        value = j
+                        break
+                    elif min_num > hole[i:].count(j):
+                        min_num = hole[i:].count(j)
+                        value = j
+                stack.remove(value)
+                stack.append(hole[i])
+                cnt += 1
+            else:
+                stack.append(hole[i])
+```
+   
+*이렇게 하면 다음에 나오는 순서가 고려가 안되므로 최소값이 구해지지 않는다.*
+
+   
+
+
+
+
+
+**두 번째 시도**   
+
+**그 이후의 빈도수가 아니라 빈도가 0이 아니라면 가장 나중에 나오는 수를 뺀다(빈도가 같을 시)**   
+
+```
+stack = []
+    for i in range(K):
+        if hole[i] in stack:
+            continue
+        else:
+            if len(stack) >= N:
+                min_num = 0
+                for j in stack:
+                    if hole[i:].count(j) == 0:
+                        value = j
+                        break
+                    elif min_num < hole[i:].index(j):
+                        min_num = hole[i:].index(j)
+                        value = j
+                stack.remove(value)
+                stack.append(hole[i])
+                cnt += 1
+            else:
+                stack.append(hole[i])
+```
+
+   
