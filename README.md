@@ -169,3 +169,44 @@ stack = []
 ```
 
    
+   
+----------------------------           
+   
+   
+
+>### 1202   
+**처음 시도**   
+
+**가방 무게보다 작은 기준으로 정렬을 해서 그 중 최댓값 구하기**
+```
+for i in range(K):
+    temp = sorted(J, key=lambda x: -x[:][1] if x[:][0] <= weight[i] else 1)
+    print(temp)
+    if weight[i] < J[0][0]:
+        continue
+    else:
+        sum_w += temp[0][1]
+        J.remove(temp[0])
+```     
+*처리 시간 초과*   
+
+
+**두 번째 시도**   
+
+**최소 힙 정렬을 이용해서 가방 무게보다 작은 것들을 힙에 담아서 그중 최솟값 뽑기(처리 시간 단축 목적)**   
+```
+for i in range(K):
+    min_w = heapq.heappop(W)
+    while J and min_w >= J[0][0]:
+        [a, b] = heapq.heappop(J)
+        heapq.heappush(sum_v, -b)
+
+    if sum_v:
+        sum_value -= heapq.heappop(sum_v)
+    elif not J:
+        break
+```
+*단순히 내장 정렬함수를 쓸 것이 아니라 힙을 사용*
+      
+      
+     
