@@ -15,8 +15,8 @@ def pipe(i, j):
         return
     if M[i][j] == 'x':
         return
-    M[i][j] = 'x' # 지나간 자리 표시
-    print(M)
+    M[i][j] = 'x'
+
     if j == (C - 1):
         cnt += 1
         end = True
