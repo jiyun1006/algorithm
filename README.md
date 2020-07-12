@@ -261,3 +261,39 @@ for i in range(K):
 *같은 루트를 지나는 오류 해결*   
 
      
+
+   
+   
+----------------------------           
+   
+   
+
+>### 9576   
+**리스트에 책의 번호를 다 넣고 제거하는 방식으로 하면 처리속도가 너무 느림**   
+   
+**문제에서 제시한 처리속도를 초과하지는 않지만 비효율적**   
+   
+```
+    for i in range(1, N + 1):
+        N_list.append(i)
+
+    cnt = 0
+    for i in range(M):
+        for j in range(num[i][0], num[i][1] + 1):
+            if j in N_list:
+                N_list.remove(j)
+                cnt += 1
+                break
+```   
+*위의 코드에서 N_list에 미리 0을 넣고 범위를 지정해서 효율적으로 코드 바꿈.*   
+   
+```
+N_list = [0] * (N + 1)
+
+    for i in range(M):
+        for j in range(num[i][0], num[i][1] + 1):
+            if N_list[j] == 0:
+                N_list[j] = 1
+                break
+```   
+*처리속도가 확연히 줄어든 것을 확인할 수 있음.* 
