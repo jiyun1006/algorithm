@@ -27,7 +27,7 @@ for i in range(K):
         break
 print(sum_value)
 
-    # sum_w = 0
+# sum_w = 0
 # for i in range(K):
 #     temp = sorted(J, key=lambda x: -x[:][1] if x[:][0] <= weight[i] else 1)
 #     print(temp)
