@@ -209,4 +209,54 @@ for i in range(K):
 *단순히 내장 정렬함수를 쓸 것이 아니라 힙을 사용*
       
       
+
+   
+   
+----------------------------           
+   
+   
+
+>### 3109   
+**처음 시도**   
+   
+**백트래킹을 이용하는 문제이다.**
+```
+    if i == -1 or i == R:
+        return
+    if M[i][j] == 'x':
+        return
+    
+    if j == (C - 1):
+        cnt += 1
+        end = True
+        return
+
+    for k in i_list:
+        pipe(i + k, j + 1)
+        if end:
+            return
+```   
+*한 번 지나간 자리에 대한 처리를 안해서 예상보다 많은 결과값이 나온다.*   
+   
+**두 번째 시도**   
+   
+**한 번 지나간 자리는 'x'로 바꿔서 같은 길을 들어가지 않게 한다**   
+```
+    if i == -1 or i == R:
+        return
+    if M[i][j] == 'x':
+        return
+    M[i][j] = 'x'
+    
+    if j == (C - 1):
+        cnt += 1
+        end = True
+        return
+
+    for k in i_list:
+        pipe(i + k, j + 1)
+        if end:
+            return
+```
+*같은 루트를 지나는 오류 해결
      
