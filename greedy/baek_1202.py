@@ -38,17 +38,4 @@ print(sum_value)
 #         J.remove(temp[0])
 # print(sum_w)
 
-# J.sort(key=lambda x: (-x[:][1], x[:][0]))
-#
-# for i in range(K):
-#     j = 0
-#     while j < (N - 1):
-#         if weight[i] < J[j][0]:
-#             j += 1
-#             continue
-#         else:
-#             sum_w += J[j][1]
-#             J.pop(j)
-#             j += 1
-#             break
-# print(sum_w)
+
