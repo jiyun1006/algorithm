@@ -2,18 +2,8 @@ import sys
 
 N = int(sys.stdin.readline())
 
-temp = [0] * N
-sum_list = 0
+temp = sorted(int(sys.stdin.readline()) for _ in range(N))
 
-for i in range(N):
-    a = int(sys.stdin.readline())
-    temp[i] = a
-temp.sort()
-temp2 = [0] * N
-
-for i in range(1, N + 1):
-    temp2[i-1] = abs(temp[i-1] - i)
-
-print(sum(temp2))
-
-
+# enumerate 사용
+sum_list = sum(abs((i+1)- value) for i , value in enumerate(temp))
+print(sum_list)
