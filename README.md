@@ -296,4 +296,40 @@ N_list = [0] * (N + 1)
                 N_list[j] = 1
                 break
 ```   
-*처리속도가 확연히 줄어든 것을 확인할 수 있음.* 
+*처리속도가 확연히 줄어든 것을 확인할 수 있음.*    
+
+     
+
+   
+   
+----------------------------           
+   
+   
+
+>### 2012   
+**번호를 넣는 순서와 해당 숫자의 차이를 구하면 된다.**   
+   
+   
+```
+for i in range(N):
+    a = int(sys.stdin.readline())
+    temp[i] = a
+temp.sort()
+temp2 = [0] * N
+
+for i in range(1, N + 1):
+    temp2[i-1] = abs(temp[i-1] - i)
+
+print(sum(temp2))
+```   
+**enumerate를 사용하면 더 효율적이게 바꿀 수 있다.**   
+   
+```
+temp = sorted(int(sys.stdin.readline()) for _ in range(N))
+
+# enumerate 사용
+sum_list = sum(abs((i+1)- value) for i , value in enumerate(temp))
+print(sum_list)
+```   
+   
+*처리속도가 줄어드는 것을 볼 수 있다.*
