@@ -33,5 +33,4 @@ else:
         cnt += 1
         if m == 0:
             break
-
     print(cnt)
