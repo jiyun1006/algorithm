@@ -26,7 +26,7 @@ for i in range(len(f)):
     if cnt == -1:
         break
     heapq.heappush(heap, (-f[i][1], f[i][1]))
-
+    
 while P < L:
     if cnt == -1:
         break
