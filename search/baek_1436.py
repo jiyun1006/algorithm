@@ -1,10 +1,9 @@
-import sys
+N = int(input())
+init = 666
 
-ip = sys.stdin.readline
+while (N):
+    if '666' in str(init):
+        N -= 1
 
-N = int(ip())
-
-if N == 1:
-    print(666)
-else:
-    print(str(N-1) + "666")
+    init += 1
+print(init - 1)
