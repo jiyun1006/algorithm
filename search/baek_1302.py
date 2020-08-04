@@ -17,15 +17,3 @@ for i in temp.keys():
         temp2.append(i)
 temp2.sort()
 print(temp2[0])
-
-# temp2.append(max(temp))
-# value = temp[max(temp)]
-# temp.pop(max(temp))
-#
-#
-# while value in temp.values():
-#     temp2.append(max(temp))
-#     temp.pop(max(temp))
-#
-# temp2.sort()
-# print(temp2[0])
