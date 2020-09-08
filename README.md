@@ -1,3 +1,22 @@
+# Leetcode   
+
+### **dataclass(데코레이션)**   
+<img src ="https://user-images.githubusercontent.com/52434993/92444719-4166fb80-f1ee-11ea-809d-a5c76a9da0a2.jpg" width = "60%">
+<br>
+
+### **타입 힌트**
+<img src ="https://user-images.githubusercontent.com/52434993/92444722-42982880-f1ee-11ea-8187-2d2e3ae2b89e.jpg" width = "60%">
+<br>
+
+### **제네레이터**
+<img src ="https://user-images.githubusercontent.com/52434993/92444724-4330bf00-f1ee-11ea-9c48-51bb932e5fc0.jpg" width = "60%">
+<br>
+
+<br><br><br>
+
+
+
+
 # Baekjoon   
 
    
@@ -347,3 +366,9 @@ print(sum_list)
 ```   
    
 *처리속도가 줄어드는 것을 볼 수 있다.*
+
+
+
+
+
+
