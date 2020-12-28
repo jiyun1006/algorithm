@@ -20,6 +20,45 @@ ana = collections.defaultdict(list)
 ```
 
 
+<br>
+<br>
+
+>### 5. longest palindrome 문재
+
+**Palindrome을 짝수의 경우와 홀수의 경우로 나눠서 구한다.**   
+
+**반복문을 써서 전체 문자열을 순회하며, 제일 긴 회문을 찾는다.**   
+
+**'왼쪽 포인터는 0이상, 오른쪽 포인터는 문자열의 길이 -1 이하'의 조건을 만족해야 한다.**    
+
+**위의 조건을 만족하는 문자열 중, 양 끝이 같은 문자열을 찾는다.(짝, 홀 동일한 함수 가능)**
+
+
+<br>
+
+```py
+def longestPalindrome(s: str) -> str:
+ 
+        def check(left: int, right: int, strs: list[str]) -> list[int]:
+            while left >= 0 and right <= len(strs) -1 and strs[left] == strs[right]:
+                left -= 1
+                right += 1
+            return strs[left+1 : right]
+    
+        
+        if len(s) < 2 or s == s[::-1]:
+            return s
+        
+        ans =''
+        for i in range(len(s)):
+            ans = max(ans, check(i,i+1,s), check(i,i+2,s),key =len)
+            
+        return ans
+```
+<br>
+<br>
+
+
 
 
 *****
