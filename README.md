@@ -1,6 +1,31 @@
 # algorithm   
 
 
+# leetcode   
+
+>### 49. anagrams 문제    
+
+**defaultdict를 이용해서 키 값의 존재 여부 체크를 간편화할 수 있다.**   
+
+**ana 딕셔너리는 같은 문자를 가진 문자열을 키 값으로 하고, 해당되는 문자열을 넣는다.**   
+
+<br>
+
+```py
+ana = collections.defaultdict(list)
+        
+        for word in strs:
+            ana[''.join(sorted(word))].append(word)
+        return ana.values()
+```
+
+
+
+
+*****
+*****
+*****  
+
 # Baekjoon   
 
    
@@ -24,7 +49,7 @@
 
 **시간 복잡도를 생각해서 python 내장 라이브러리 bisect를 이용한다.** 
 
-```
+```py
 for i in range(1,n):
     if number[i] > dp[-1]:
         dp.append(number[i])
@@ -42,7 +67,7 @@ for i in range(1,n):
 
 **먼저 DFS원리로 탐색하고, 다시 백트래킹으로 탐색한다.**
 
-```
+```py
 for i in range(10):
         if not c[i]:
             if cnt == 0 or possible(s[-1], str(i), op[cnt - 1]):
@@ -61,7 +86,7 @@ for i in range(10):
 
 **combinations 이용해서 계수정렬 형식으로 시도**   
 
-```
+```py
 for i in range(1, N):
     weg = list(set(list(combinations(weight, i))))
 
@@ -81,7 +106,7 @@ for i in range(1, N):
 **두 번째 시도**   
 
 **bisect를 이용해서 무게들의 더해가면서 그보다 1 큰 값**   
-```
+```py
 for i in range(N):
     value = sum_list[i]
     weight_copy = weight.copy()
@@ -107,7 +132,7 @@ for i in range(N):
 **(더해가는 값+1)이 리스트에 있는 값보다 작을 때 반복문 탈출**   
 
 
-```
+```py
 weight.sort()
 sum = 0
 for i in range(N):
@@ -129,7 +154,7 @@ print(sum+1)
    
 **구멍이 비어있으면 계속 꽂는다. 다 찼다면 그 이후의 순서를 봐서 제일 빈도수가 낮은 번호를 뺀다.**   
 
-```
+```py
 stack = []
     for i in range(K):
         if hole[i] in stack:
@@ -163,7 +188,7 @@ stack = []
 
 **그 이후의 빈도수가 아니라 빈도가 0이 아니라면 가장 나중에 나오는 수를 뺀다(빈도가 같을 시)**   
 
-```
+```py
 stack = []
     for i in range(K):
         if hole[i] in stack:
@@ -195,7 +220,7 @@ stack = []
 **처음 시도**   
 
 **가방 무게보다 작은 기준으로 정렬을 해서 그 중 최댓값 구하기**
-```
+```py
 for i in range(K):
     temp = sorted(J, key=lambda x: -x[:][1] if x[:][0] <= weight[i] else 1)
     print(temp)
@@ -211,7 +236,7 @@ for i in range(K):
 **두 번째 시도**   
 
 **최소 힙 정렬을 이용해서 가방 무게보다 작은 것들을 힙에 담아서 그중 최솟값 뽑기(처리 시간 단축 목적)**   
-```
+```py
 for i in range(K):
     min_w = heapq.heappop(W)
     while J and min_w >= J[0][0]:
@@ -237,7 +262,7 @@ for i in range(K):
 **처음 시도**   
    
 **백트래킹을 이용하는 문제이다.**
-```
+```py
     if i == -1 or i == R:
         return
     if M[i][j] == 'x':
@@ -258,7 +283,7 @@ for i in range(K):
 **두 번째 시도**   
    
 **한 번 지나간 자리는 'x'로 바꿔서 같은 길을 들어가지 않게 한다**   
-```
+```py
     if i == -1 or i == R:
         return
     if M[i][j] == 'x':
@@ -290,7 +315,7 @@ for i in range(K):
    
 **문제에서 제시한 처리속도를 초과하지는 않지만 비효율적**   
    
-```
+```py
     for i in range(1, N + 1):
         N_list.append(i)
 
@@ -304,7 +329,7 @@ for i in range(K):
 ```   
 *위의 코드에서 N_list에 미리 0을 넣고 범위를 지정해서 효율적으로 코드 바꿈.*   
    
-```
+```py
 N_list = [0] * (N + 1)
 
     for i in range(M):
@@ -327,7 +352,7 @@ N_list = [0] * (N + 1)
 **번호를 넣는 순서와 해당 숫자의 차이를 구하면 된다.**   
    
    
-```
+```py
 for i in range(N):
     a = int(sys.stdin.readline())
     temp[i] = a
@@ -341,7 +366,7 @@ print(sum(temp2))
 ```   
 **enumerate를 사용하면 더 효율적이게 바꿀 수 있다.**   
    
-```
+```py
 temp = sorted(int(sys.stdin.readline()) for _ in range(N))
 
 # enumerate 사용
