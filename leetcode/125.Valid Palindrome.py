@@ -6,7 +6,7 @@
 
 # deque를 이용해서 pop(0)의 O(n)을 O(1)로 바꿔 실행시간을 줄인 방법
 
-def isPalindrome(self, s: str) -> bool:
+def isPalindrome(s: str) -> bool:
         a = deque()
         for char in s:
             if char.isalnum():
@@ -23,7 +23,7 @@ def isPalindrome(self, s: str) -> bool:
 
 # 정규표현식을 이용해서 문자를 필터링.
 
-def isPalindrome(self, s: str) -> bool:
+def isPalindrome(s: str) -> bool:
         s = s.lower()
         
         s = re.sub('[^a-z0-9]', '', s)
