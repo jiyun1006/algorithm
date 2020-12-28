@@ -4,6 +4,7 @@
 # leetcode   
 
 >### 49. anagrams 문제    
+<br>
 
 **defaultdict를 이용해서 키 값의 존재 여부 체크를 간편화할 수 있다.**   
 
@@ -23,7 +24,8 @@ ana = collections.defaultdict(list)
 <br>
 <br>
 
->### 5. longest palindrome 문재
+>### 5. longest palindrome 문제
+<br>
 
 **Palindrome을 짝수의 경우와 홀수의 경우로 나눠서 구한다.**   
 
