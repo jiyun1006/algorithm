@@ -128,6 +128,31 @@ if len(height) > 1:
 <br>
 <br>
 
+>## 238. Product of Array Except Self   
+
+**자기자신을 제외한 왼쪽의 곱과 오른쪽의 곱을 곱하는 방법 --> O(n)으로 풀기위해서**   
+
+<br>
+*왼쪽 곱 1 1(1) 2(1*2) 6(1*2*3)*   
+
+*오른쪽 곱 1 4(4) 12(3*4) 24(2*3*4)*   
+
+```py
+ a = 1
+        temp = []
+        for i in nums:
+            temp.append(a)
+            a*=i
+        a = 1
+        
+        for j in range(len(nums), 0, -1):
+            temp[j-1]*=a
+            a*=nums[j-1]
+        return temp
+```
+
+<br>
+<br>
 
 
 *****
