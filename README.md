@@ -130,6 +130,7 @@ if len(height) > 1:
 
 
 >## 238. Product of Array Except Self   
+<br>
 
 **자기자신을 제외한 왼쪽의 곱과 오른쪽의 곱을 곱하는 방법 --> O(n)으로 풀기위해서**   
 
@@ -160,6 +161,75 @@ if len(height) > 1:
 
 <br>
 <br>
+
+
+>## 234.Palindrome Linked List 
+<br>
+
+**연결리스트의 회문을 구하는 문제이다.**   
+
+*ListNode의 클래스*   
+
+<br>
+
+```py
+ class ListNode:
+     def __init__(self, val=0, next=None):
+         self.val = val
+         self.next = next
+```
+
+<br>
+
+**기본적인 리스트의 성질을 이용해서 풀어낸다.(deque를 이용해서 pop(n)의 시간복잡도를 줄인다.)**   
+<br>
+
+```py
+temp_list: Deque = deque()
+        
+        if not head:
+            return True
+        
+        node = head
+        
+        while node is not None:
+            temp_list.append(node.val)
+            node = node.next
+        
+        while len(temp_list) > 1:
+            if temp_list.pop() != temp_list.popleft():
+                return False
+        return True
+```
+<br>
+
+**연결리스트 회문 풀이법의 올바른 접근은 러너(Runner)기법이다.**   
+
+**빠른 러너와 느린 러너를 이용해서 각각, 연결리스트의 끝과, 역순을 저장하는데 이용한다.**    
+
+<br>
+
+*slow가 지나온 길을 rev에 저장하면서 역순으로 저장하게끔 한다.*   
+
+<br>
+   
+```py
+fast = slow = head
+        rev = None
+        while fast and fast.next:
+            fast = fast.next.next
+            rev, rev.next, slow = slow, rev, slow.next
+            
+        if fast:
+            slow = slow.next
+            
+        while rev and rev.val == slow.val:
+            slow, rev = slow.next, rev.next
+        return not rev
+```
+<br>
+
+
 
 
 *****
