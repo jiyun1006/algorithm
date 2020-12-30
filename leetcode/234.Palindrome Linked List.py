@@ -52,3 +52,26 @@ def isPalindrome(self, head: ListNode) -> bool:
                 return False
         return True
 
+
+# In[ ]:
+
+
+# 런너를 이용한 팰린드롬 연결 리스트 풀이 (빠른 런너, 느린 런너)
+
+def isPalindrome(head: ListNode) -> bool:
+        
+        fast = slow = head
+        rev = None
+        while fast and fast.next:
+            fast = fast.next.next
+            rev, rev.next, slow = slow, rev, slow.next
+            
+        if fast:
+            slow = slow.next
+            
+        while rev and rev.val == slow.val:
+            slow, rev = slow.next, rev.next
+        return not rev
+            
+
+
