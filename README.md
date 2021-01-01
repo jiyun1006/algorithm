@@ -230,7 +230,8 @@ fast = slow = head
 <br>
 <br>
 
->## 39. Combination Sum   
+>## 39. Combination Sum  
+<br>
 
 **더하는 숫자가 중복이 되도 되므로, 전체 배열을 반복하도록 한다.**    
 
