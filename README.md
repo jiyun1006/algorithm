@@ -254,7 +254,7 @@ def DFS(ans: int, strs: List):
                 
             
             for i in range(len(candidates)):
-                temp  = strs[:]
+                temp  = strs[:]  // temp = strs 이라 쓰게 되면 참조된 값이 같게 되어 제대로 
                 temp.append(candidates[i])
                 DFS(ans + candidates[i], temp)
         
