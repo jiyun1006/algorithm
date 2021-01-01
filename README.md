@@ -228,8 +228,41 @@ fast = slow = head
         return not rev
 ```
 <br>
+<br>
 
+>## 39. Combination Sum   
 
+**더하는 숫자가 중복이 되도 되므로, 전체 배열을 반복하도록 한다.**    
+
+**dfs를 진행하면서, target 숫자를 넘어가면 해당 트리는 그만 진행한다.**   
+
+**또한 같은 배열이 답에 포함되지 않도록, 정렬을 이용한다.**   
+
+<br>
+
+```py
+def DFS(ans: int, strs: List):
+            if ans > target:
+                return 
+            
+            if ans == target:
+                strs = sorted(strs)
+                if strs in ans_list:
+                    return
+                ans_list.append(strs)
+                
+            
+            for i in range(len(candidates)):
+                temp  = strs[:]
+                temp.append(candidates[i])
+                DFS(ans + candidates[i], temp)
+        
+        DFS(ans, strs)
+        return ans_list
+```
+ 
+<br>
+<br>
 
 
 *****
