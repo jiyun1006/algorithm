@@ -266,6 +266,37 @@ def DFS(ans: int, strs: List):
 <br>
 
 
+>## 787.Cheapest Flights Within K Stops   
+
+<br>
+
+**기존의 다익스트라 알고리즘을 이용한다. (제한 조건 때문에, 약간의 변형이 필요함.)**   
+
+**우선순위 큐를 이용해서 최솟값을 구한다.(움직이는 횟수가 정해져 있으므로, 도착점에 도착했는지에 대한 확인 필요.)**   
+
+```py
+q = [(0, src, K)]
+            
+        while q:
+            p, node, k = heapq.heappop(q)
+            
+            # 목표지점에 도착했을 때, 비용을 결과값으로 내보낸다.
+            if node == dst:
+                return p
+                
+            # 정점을 하나 지날 때 마다, 움직이는 횟수를 1씩 뺀다.    
+            # k가 0미만이면, 중단.
+            if k >= 0:
+                for a, b in dic[node]:
+                    t = p + b
+                    heapq.heappush(q, (t, a, k-1))
+```
+
+<br>
+<br>
+
+
+
 *****
 *****
 *****  
