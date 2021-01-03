@@ -297,6 +297,34 @@ q = [(0, src, K)]
 <br>
 <br>
 
+>## 543.Diameter of Binary Tree    
+
+<br>
+
+**이진 트리에서 두 노드 간 가장 긴 경로의 길이를 구하는 문제이다.**   
+
+**리프노드에서부터 부모노드로 역순으로 올라가면서 길이를 더해가면 해결된다.**   
+
+<br>
+
+```py
+def dfs(node: TreeNode):
+            if not node:
+                return -1
+            
+            left = dfs(node.left)
+            right = dfs(node.right)
+            
+            # 가장 긴 경로를 더한다. (왼쪽,오른쪽 사이의 경로이므로 +2)
+            self.longest = max(self.longest, (left+right+2))
+            
+            # 리프노드부터 올라가면서 값을 만들어간다.
+            return max(left, right) + 1
+```
+
+<br>
+<br>
+
 
 
 *****
