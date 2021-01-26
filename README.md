@@ -52,7 +52,7 @@ for ad in ad_list:
         tmp = 0
 ```
 *****
-<br>
+<br><br>
 
 >### 무지의 먹방 라이브   
 
@@ -83,7 +83,7 @@ while total + ((q[0][0]- pre) * time_len) <= k:
         pre = now
 ```
 
-**
+*방향은 맞지만, 적절한 자료구조 사용 미흡.*
 
 
 
