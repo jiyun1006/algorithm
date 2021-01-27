@@ -13,11 +13,11 @@
 <br>
 
    
-- <a href="https://github.com/jiyun1006/algorithm/blob/main/baekjoon/baek_comment.md ">baekjoon    
+- <a href="https://github.com/jiyun1006/algorithm/blob/main/baekjoon/baek_comment.md ">baekjoon</a>    
 
 <br>
 
-- <a href="https://github.com/jiyun1006/algorithm/blob/main/leetcode/leetcode_comment.md">leetcode   
+- <a href="https://github.com/jiyun1006/algorithm/blob/main/leetcode/leetcode_comment.md">leetcode</a>     
 
 
 <br><br>
@@ -26,5 +26,5 @@
 **유형별**   
 <br>
 
-- <a href="https://github.com/jiyun1006/algorithm/blob/main/greedy/greedy_comment.md"> greedy
+- <a href="https://github.com/jiyun1006/algorithm/blob/main/greedy/greedy_comment.md"> greedy</a>
 
