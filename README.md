@@ -12,11 +12,13 @@
 **사이트별**   
 <br>
 
-- baekjoon    
-https://github.com/jiyun1006/algorithm/blob/main/baekjoon/baek_comment.md    
+   
+- <a href="https://github.com/jiyun1006/algorithm/blob/main/baekjoon/baek_comment.md ">baekjoon    
 
-- leetcode   
-https://github.com/jiyun1006/algorithm/blob/main/leetcode/leetcode_comment.md
+<br>
+
+- <a href="https://github.com/jiyun1006/algorithm/blob/main/leetcode/leetcode_comment.md">leetcode   
+
 
 <br><br>
 
@@ -24,5 +26,5 @@ https://github.com/jiyun1006/algorithm/blob/main/leetcode/leetcode_comment.md
 **유형별**   
 <br>
 
-- greedy   
-https://github.com/jiyun1006/algorithm/blob/main/greedy/greedy_comment.md
+- <a href="https://github.com/jiyun1006/algorithm/blob/main/greedy/greedy_comment.md"> greedy
+
