@@ -1,6 +1,6 @@
 # Brute_force   
 
-##문제   
+## 문제   
 
 <br>
 
