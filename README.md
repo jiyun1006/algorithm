@@ -28,3 +28,7 @@
 
 - <a href="https://github.com/jiyun1006/algorithm/blob/main/greedy/greedy_comment.md"> greedy</a>
 
+<br>
+
+- <a href="https://github.com/jiyun1006/algorithm/blob/main/brute-force/brute_comment.md"> brute_force </a>
+
