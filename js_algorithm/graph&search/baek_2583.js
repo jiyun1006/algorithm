@@ -1,7 +1,6 @@
 // 영역 구하기
 
 const fs = require("fs");
-const { createBrotliCompress } = require("zlib");
 const filepath = process.platform === 'linux' ? '/dev/stdin' : '.ex/txt';
 const input = fs.readFileSync('./ex.txt').toString().trim().split('\n');
 
