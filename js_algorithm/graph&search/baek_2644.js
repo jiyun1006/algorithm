@@ -14,26 +14,28 @@ input.map((el) => {
     arr[a].push(b);
     arr[b].push(a);
 })
-const bfs = (start, tar) => {
-    const visited = new Array(n + 1);
-    visited[start] = true;
+
+
+const bfs = (start) => {
+    const visited = new Array(n + 1).fill(-1);
     let ans = 0;
+    visited[start] = 0;
     const queue = [start];
 
     while (queue.length) {
-        const cur = queue.shift();
         ans++;
+        let cur = queue.shift();
         for (let i = 0; i < arr[cur].length; i++) {
             let next = arr[cur][i];
-            if (!visited[next]) {
-                if (next === tar) return ans;
-                visited[next] = true;
+            if (visited[next] === -1) {
+                visited[next] = visited[cur] + 1;
                 queue.push(next);
             }
         }
     }
-    return -1;
+    return visited;
 }
 
-const abs = bfs(7, 3);
-console.log(abs);
+const answer = bfs(tar1)
+
+console.log(answer[tar2]);
