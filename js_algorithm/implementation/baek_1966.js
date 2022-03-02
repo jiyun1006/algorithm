@@ -1,3 +1,5 @@
+// 프린터 큐
+
 const fs = require("fs");
 const filepath = process.platform === 'linux' ? '/dev/stdin' : '.ex/txt';
 const input = fs.readFileSync("./ex.txt").toString().trim().split('\n');
